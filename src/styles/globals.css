@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --color: hsl(217, 10, 25);
-  --background: hsl(0, 0, 90);
+  --color: #393e46;
+  --background: #e6e6e6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: 0, 0, 0;
-    --background: 214, 219, 220;
+    --color: #393e46;
+    --background: #e6e6e6;
   }
 }
 
 body {
-  color: rgb(var(--color));
-  background: rgb(var(--background));
+  color: var(--color);
+  background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
@@ -30,6 +30,19 @@ body {
   h3 {
     @apply text-sm text-gray-900 font-bold;
   }
+
+  label {
+    @apply mt-2;
+  }
+
+  input,
+  textarea {
+    @apply rounded text-sm text-gray-300 bg-white p-3.5 focus:text-gray-700;
+  }
+
+  input[type='checkbox'] {
+    @apply h-[24px] w-[24px] outline-none;
+  }
 }
 
 @layer components {
@@ -38,6 +51,6 @@ body {
   }
 
   .btn-big {
-    @apply p-3.5 min-w-[296px] bg-primary rounded text-base font-bold text-white text-center hover:saturate-150 transition-transform;
+    @apply p-3.5 bg-primary rounded text-base font-bold text-white text-center hover:saturate-150 transition-transform;
   }
 }
