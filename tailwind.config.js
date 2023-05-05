@@ -30,6 +30,16 @@ module.exports = {
       'banner-top': "url('/top.png')",
       'banner-mid': "url('/mid.png')",
       'banner-bot': "url('/bot.png')",
+      'banner-form': "url('/form.avif')",
+    },
+    extend: {
+      keyframes: {
+        breathe: {
+          '0%, 100%': { transform: 'scale(100%)' },
+          '50%': { transform: 'scale(105%)' },
+        },
+      },
+      animation: { breathe: 'breathe 5s ease infinite' },
     },
   },
   plugins: [],
