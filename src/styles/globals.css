@@ -22,6 +22,22 @@ body {
 }
 
 @layer base {
+  body:has(nav ul[aria-hidden='false']) {
+    @apply fixed;
+  }
+
+  nav button[aria-label='toggle-navigation'] {
+    @apply transition-transform rotate-0;
+  }
+
+  nav button[aria-expanded='true'] {
+    @apply rotate-90;
+  }
+
+  nav ul[aria-hidden='true'] {
+    @apply opacity-0 -translate-x-[100vw];
+  }
+
   h1,
   h2 {
     @apply text-2xl text-gray-900 font-bold;
@@ -43,14 +59,26 @@ body {
   input[type='checkbox'] {
     @apply h-[24px] w-[24px] outline-none;
   }
+
+  input:valid,
+  textarea:valid {
+    @apply text-gray-700;
+  }
+
+  a {
+    @apply text-white underline hover:text-primary;
+  }
 }
 
 @layer components {
   .btn-small {
-    @apply p-2 min-w-[100px] bg-primary rounded text-xs font-bold text-white text-center hover:saturate-150 transition-transform;
+    @apply p-2 min-w-[100px] bg-primary rounded text-xs font-bold text-white text-center hover:saturate-150 transition-transform no-underline;
   }
 
   .btn-big {
-    @apply p-3.5 bg-primary rounded text-base font-bold text-white text-center hover:saturate-150 transition-transform;
+    @apply p-3.5 bg-primary rounded text-base font-bold text-white text-center hover:saturate-150 transition-transform no-underline;
+  }
+
+  nav {
   }
 }
