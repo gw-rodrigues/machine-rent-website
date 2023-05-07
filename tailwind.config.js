@@ -20,8 +20,8 @@ module.exports = {
       primary: '#D65A31',
       alert: {
         green: '#5D9C59',
-        yellow: '#DF2E38',
-        red: '#FFB800',
+        yellow: '#FFB800',
+        red: '#DF2E38',
       },
     },
     backgroundImage: {
